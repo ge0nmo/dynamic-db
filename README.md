@@ -1,6 +1,6 @@
 # 🔀 Dynamic Multi-Tenant Database Switching in Spring Boot
 
-This project demonstrates **how to dynamically switch between multiple databases** at runtime using Spring Boot, JPA, and a custom `AbstractRoutingDataSource`. It is useful for multi-tenant architectures where each tenant (e.g., team or branch) uses its own database.
+This project demonstrates **how to dynamically switch between multiple databases** at runtime using Spring Boot, JPA, and a custom `AbstractRoutingDataSource`.
 
 ---
 
