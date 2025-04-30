@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: dynamic-db
+
+  datasource:
+    main:
+      jdbc-url: jdbc:mysql://main-db:3306/main_db
+      username: root
+      password: root
