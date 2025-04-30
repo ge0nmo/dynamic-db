@@ -56,7 +56,7 @@ com.example.dynamicdb
 
 ```bash
 git clone https://github.com/your-username/dynamic-db-routing.git
-cd dynamic-db-routing
+cd dynamic-db
 ```
 
 ### 2. Build the JAR
