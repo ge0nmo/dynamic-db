@@ -1,4 +1,4 @@
-# 🔀 Dynamic Multi-Tenant Database Switching in Spring Boot
+# 🔀 Dynamic Multi-Tenant Database Switching
 
 This project demonstrates **how to dynamically switch between multiple databases** at runtime using Spring Boot, JPA, and a custom `AbstractRoutingDataSource`.
 
