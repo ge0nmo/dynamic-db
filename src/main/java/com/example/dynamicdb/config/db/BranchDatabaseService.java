@@ -8,7 +8,6 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
-import java.lang.reflect.Member;
 
 @Slf4j
 @Service

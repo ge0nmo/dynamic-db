@@ -19,7 +19,6 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.dynamicdb.config.db.AppConfig.BRANCH_DB_PACKAGE;
 import static com.example.dynamicdb.config.db.AppConfig.MAIN_DB_PACKAGE;
 
 @Slf4j
