@@ -31,6 +31,7 @@ public class BranchDatabaseService
                     .url(team.getDbUrl())
                     .username(team.getDbUsername())
                     .password(team.getDbPassword())
+                    .driverClassName("com.mysql.cj.jdbc.Driver")
                     .build();
 
             routingDataSource.addDataSource(branchKey, branchDataSource);

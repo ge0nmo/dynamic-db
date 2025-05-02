@@ -28,23 +28,6 @@ import static com.example.dynamicdb.config.db.AppConfig.BRANCH_DB_PACKAGE;
 )
 public class BranchDbConfig
 {
-    private final DataSource mainDataSource;
-
-    public BranchDbConfig(@Qualifier("mainDataSource") DataSource mainDataSource)
-    {
-        this.mainDataSource = mainDataSource;
-    }
-
-    @Bean(name = "branchDataSource")
-    public DynamicRoutingDataSource branchDataSource()
-    {
-        DynamicRoutingDataSource routingDataSource = new DynamicRoutingDataSource();
-        routingDataSource.setDefaultTargetDataSource(mainDataSource);
-        routingDataSource.setTargetDataSources(new HashMap<>());
-        routingDataSource.afterPropertiesSet();
-        return routingDataSource;
-    }
-
     @Bean(name = "branchEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean branchEntityManagerFactory(EntityManagerFactoryBuilder builder,
                                                                              @Qualifier("branchDataSource") DataSource dataSource)
@@ -55,7 +38,8 @@ public class BranchDbConfig
         properties.put("hibernate.show_sql", "true");
         properties.put("hibernate.format_sql", "true");
 
-        return builder.dataSource(dataSource)
+        return builder
+                .dataSource(dataSource)
                 .properties(properties)
                 .packages(BRANCH_DB_PACKAGE)
                 .persistenceUnit("branch")

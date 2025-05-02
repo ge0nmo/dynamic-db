@@ -4,4 +4,5 @@ public class AppConfig
 {
     public static final String MAIN_DB_PACKAGE = "com.example.dynamicdb.main";
     public static final String BRANCH_DB_PACKAGE = "com.example.dynamicdb.branch";
+    public static final String INIT_DB = "__init__";
 }
