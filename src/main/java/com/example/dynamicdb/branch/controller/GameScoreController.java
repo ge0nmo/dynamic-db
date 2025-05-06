@@ -1,5 +1,6 @@
 package com.example.dynamicdb.branch.controller;
 
+import com.example.dynamicdb.branch.controller.dto.GameScoreDTO;
 import com.example.dynamicdb.branch.domain.GameScore;
 import com.example.dynamicdb.branch.service.GameScoreService;
 import com.example.dynamicdb.config.db.BranchDatabaseService;
@@ -25,7 +26,7 @@ public class GameScoreController
     private final BranchDatabaseService branchDatabaseService;
 
     @GetMapping
-    public ResponseEntity<GameScore> getGameScoreById(@RequestParam("memberCode") String memberCode) {
+    public ResponseEntity<GameScoreDTO> getGameScoreById(@RequestParam("memberCode") String memberCode) {
         log.info("GameScoreController.getGameScoreByMemberCode = {}", memberCode);
         MainMember member = mainMemberService.findByMemberCode(memberCode);
         log.info("Member = {}", member);
@@ -33,11 +34,11 @@ public class GameScoreController
         branchDatabaseService.switchDatabase(member);
         log.info("DatabaseContextHolder.getBranch() = {}", DatabaseContextHolder.getBranch());
 
-        GameScore response = gameScoreService.getMemberGameScore(memberCode);
+        GameScore gameScore = gameScoreService.getMemberGameScore(memberCode);
 
         branchDatabaseService.clear();
-        log.info("GameScoreController.getGameScoreByMemberCode response = {}", response);
+        log.info("GameScoreController.getGameScoreByMemberCode response = {}", gameScore);
 
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(new GameScoreDTO(gameScore, memberCode));
     }
 }

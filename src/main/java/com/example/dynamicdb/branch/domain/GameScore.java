@@ -2,10 +2,12 @@ package com.example.dynamicdb.branch.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Table(name = "game_score")
 @Entity
 public class GameScore
