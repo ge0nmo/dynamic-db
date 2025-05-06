@@ -33,6 +33,7 @@ com.example.dynamicdb
 │   └── db                     # Routing datasource, context holder, config
 │       ├── DatabaseContextHolder.java
 │       ├── DynamicRoutingDataSource.java
+│       ├── RoutingDataSourceConfig.java
 │       ├── MainDbConfig.java
 │       ├── BranchDbConfig.java  
 │       └── BranchDatabaseService.java
