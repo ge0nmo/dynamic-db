@@ -55,11 +55,6 @@ com.example.dynamicdb
 
 ### 1. Clone the Repository
 
-```bash
-git clone https://github.com/your-username/dynamic-db-routing.git
-cd dynamic-db
-```
-
 ### 2. Build the JAR
 
 Make sure you're using JDK 17.
